@@ -1,0 +1,180 @@
+{
+  "utilisateurs": [
+    {
+      "id": "c472",
+      "nom": "attman",
+      "prenom": "attman",
+      "email": "attman12@mail.com",
+      "typeUtilisateur": "utilisateur",
+      "motDePasse": "attman",
+      "statut": true
+    },
+    {
+      "id": "9b58",
+      "nom": "GhallabAmine",
+      "prenom": "Amine",
+      "email": "Ghallabamine36@gmail.com",
+      "typeUtilisateur": "utilisateur",
+      "motDePasse": "amine",
+      "statut": true
+    },
+    {
+      "id": "b5f2",
+      "nom": "GhallabAdmin",
+      "prenom": "Amine",
+      "email": "Ghallabamine36@gmail.com",
+      "typeUtilisateur": "admin",
+      "motDePasse": "admin",
+      "statut": true
+    }
+  ],
+  "documents": [
+    {
+      "id": "5d14",
+      "emplacement": "Doc/math",
+      "identificateur": "Algebre",
+      "extension": "doc",
+      "taille": 123,
+      "Idproprietaire": "c472",
+      "type": "document",
+      "isEdit": false
+    },
+    {
+      "id": "10ae",
+      "emplacement": "Nouveaudoc/perso",
+      "identificateur": "musique",
+      "extension": "mp3",
+      "taille": "12345",
+      "Idproprietaire": "549d",
+      "type": "sound",
+      "isEdit": false
+    },
+    {
+      "id": "97bd",
+      "emplacement": "Doc/math",
+      "identificateur": "Algebre",
+      "extension": "doc",
+      "taille": "2343",
+      "Idproprietaire": "42a5",
+      "type": "document",
+      "isEdit": false
+    },
+    {
+      "id": "2369",
+      "emplacement": "Doc/math",
+      "identificateur": "librairie",
+      "extension": "doc",
+      "taille": 123445,
+      "Idproprietaire": "69cb",
+      "type": "documents",
+      "isEdit": false
+    },
+    {
+      "id": "e109",
+      "emplacement": "Doc/math",
+      "identificateur": "librairie",
+      "extension": "doc",
+      "taille": 1234,
+      "Idproprietaire": "9b58",
+      "type": "powerpoint",
+      "isEdit": false
+    }
+  ],
+  "currentuser": [],
+  "dossiers": [
+    {
+      "id": "ae3edb3b-9ef0-4ad1-a490-6e7e5974c75d",
+      "idprop": "c86b",
+      "nom": "MesDocuments",
+      "documents": [
+        null,
+        {
+          "id": "3dcbdc8d-7b17-45c5-a68d-904d2c5d9f65",
+          "_chemin": {
+            "emplacement": "Nouveaudoc/perso",
+            "nom": "perso",
+            "extension": "mp3"
+          },
+          "isEdit": false,
+          "_taille": 12344,
+          "_Idproprietaire": "c86b",
+          "editMode": true
+        }
+      ]
+    },
+    {
+      "id": "b6d5c506-be22-424e-a812-4fb196b13b89",
+      "idprop": "549d",
+      "nom": "MesDocuments",
+      "documents": [
+        {
+          "id": "c1ea05fb-e035-4f8e-86e4-324e7e1fcae5",
+          "_chemin": {
+            "emplacement": "Video/mesfilms",
+            "nom": "films",
+            "extension": "mp4"
+          },
+          "isEdit": false,
+          "_taille": 1234,
+          "_Idproprietaire": "549d"
+        }
+      ]
+    },
+    {
+      "id": "309b0288-c1ba-42b8-ad27-7a05037d1444",
+      "idprop": "c472",
+      "nom": "MesDocuments",
+      "documents": [
+        {
+          "id": "f4aef502-60b6-4903-b4a6-1ebaf12326cf",
+          "_chemin": {
+            "emplacement": "Doc/math",
+            "nom": "Algebre",
+            "extension": "doc"
+          },
+          "isEdit": false,
+          "_taille": 1234,
+          "_Idproprietaire": "c472"
+        }
+      ]
+    },
+    {
+      "id": "cbed74c3-9049-4c19-b3e6-7b103fdc4e41",
+      "idprop": "42a5",
+      "nom": "Fullstack",
+      "documents": [
+        {
+          "id": "6da1c16f-663f-4c14-9bb5-735fec399499",
+          "_chemin": {
+            "emplacement": "Angular/doc",
+            "nom": "angular",
+            "extension": "ppt"
+          },
+          "isEdit": false,
+          "_taille": 1234,
+          "_Idproprietaire": "42a5",
+          "_type": ""
+        }
+      ]
+    },
+    {
+      "id": "ee698e6d-71f7-4c39-b79e-8f55c47193d9",
+      "idprop": "9b58",
+      "nom": "MesDocuments",
+      "documents": [
+        {
+          "id": "73200f62-43af-4386-bfa9-c80ede4b3318",
+          "_chemin": {
+            "emplacement": "doc/perso",
+            "nom": "perso",
+            "extension": "mp4"
+          },
+          "isEdit": false,
+          "_taille": 1223455,
+          "_Idproprietaire": "9b58",
+          "editMode": false
+        }
+      ]
+    }
+  ]
+}

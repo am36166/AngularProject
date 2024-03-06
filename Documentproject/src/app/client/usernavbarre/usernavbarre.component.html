@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container">
+    <a class="navbar-brand text-white">Espace Utilisateur</a>
+    <div class="navbar-collapse justify-content-begin">
+      <a [routerLink]="'/List-Doc'" class="nav-link text-white">
+        <i class="bi bi-file-earmark-text"></i> Vos documents
+      </a>
+
+      <a [routerLink]="'/dossiers'" class="nav-link text-white">
+        <i class="bi bi-folder"></i> Vos dossiers
+      </a>
+    </div>
+    <button class="btn btn-outline-danger" (click)="se_deconnecter()">Déconnexion</button>
+  </div>
+</nav>

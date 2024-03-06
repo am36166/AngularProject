@@ -1,0 +1,51 @@
+<app-usernavbarre></app-usernavbarre>
+<div class="container mt-4">
+  <div class="feedback-message alert alert-info mt-2" *ngIf="Updated">{{ SuccesMessage }}</div>
+  <app-navbarre-doc></app-navbarre-doc>
+  <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">Type de Document</th>
+              <th scope="col">Propriétaire</th>
+              <th scope="col">Taille</th>
+              <th scope="col">Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let document of documents$ |async">
+              <td>
+                <div *ngIf="document.isEdit">
+                  <input type="text" [(ngModel)]="document.type">
+                </div>
+                <div *ngIf="!document.isEdit">
+                   {{document.type}}
+                </div>
+              </td>
+              <td><div *ngIf="document.isEdit">
+                <input type="text" [(ngModel)]="document.Idproprietaire">
+              </div>
+              <div *ngIf="!document.isEdit">
+                 {{document.Idproprietaire}}
+              </div></td>
+              <td>
+                <div *ngIf="document.isEdit">
+                  <input type="text" [(ngModel)]="document.taille">
+                </div>
+                <div *ngIf="!document.isEdit">
+                   {{document.taille}}octes
+                </div>
+              </td>
+              <td>
+                  <button (click)="onEdit(document)" class="btn btn-sm btn-primary">
+                    <i class="bi bi-pencil"></i> {{ document.isEdit ? 'Enregistrer' : 'Modifier' }}
+                  </button>
+
+                  <button (click)="deleteDocument(document)" class="btn btn-sm btn-danger" style="margin-left: 2px;">
+                      <i class="bi bi-trash"></i> Supprimer
+                  </button>
+
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

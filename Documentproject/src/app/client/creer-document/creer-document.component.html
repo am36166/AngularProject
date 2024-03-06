@@ -1,0 +1,39 @@
+<app-usernavbarre></app-usernavbarre>
+<div class="container mt-4">
+<app-navbarre-doc></app-navbarre-doc>
+<div class="feedback-message alert alert-info mt-2" *ngIf="successMessage">{{ successMessage }}</div>
+<div class="feedback-message alert alert-danger mt-2" *ngIf="errorMessage">{{errorMessage}}</div>
+<form [formGroup]="documentForm" (ngSubmit)="submitForm()" class="compact-form">
+    <div class="form-group">
+      <label for="emplacement">Emplacement</label>
+      <input type="text" id="emplacement" formControlName="emplacement" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <label for="identificateur">Identificateur</label>
+      <input type="text" id="identificateur" formControlName="identificateur" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <label for="extension">Extension</label>
+      <input type="text" id="extension" formControlName="extension" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <label for="taille">Taille</label>
+      <input type="number" id="taille" formControlName="taille" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <label for="Idproprietaire">ID Propriétaire</label>
+      <input type="text" id="Idproprietaire" formControlName="Idproprietaire" [value]="currentuser?.id" readonly>
+    </div>
+    
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input type="text" id="type" formControlName="type" class="form-control">
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Créer Document</button>
+  </form>
+  </div>

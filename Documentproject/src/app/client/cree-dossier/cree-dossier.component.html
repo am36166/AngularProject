@@ -1,0 +1,59 @@
+<app-usernavbarre></app-usernavbarre>
+<div class="container mt-4">
+    <app-navbarre-dossier></app-navbarre-dossier>
+    <div class="container mt-4">
+        <h2>Créer un nouveau dossier</h2>
+        <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+        <form [formGroup]="dossierForm" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="nom">Nom du dossier:</label>
+            <input type="text" class="form-control" id="nom" formControlName="nom" required>
+          </div>
+      
+          <div formArrayName="documents">
+            <div *ngFor="let document of documents.controls; let i = index" class="card mt-3">
+              <div class="card-header">
+                <h5>Document {{ i + 1 }}</h5>
+              </div>
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="emplacement">Emplacement:</label>
+                    <input type="text" class="form-control" id="emplacement" [formControl]="document.get('emplacement')" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="identificateur">Identificateur:</label>
+                    <input type="text" class="form-control" id="identificateur" [formControl]="document.get('identificateur')" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="Idproprietaire">Id du propriétaire:</label>
+                      <input type="text" id="Idproprietaire" class="form-control" [formControl]="document.get('Idproprietaire')" readonly>
+                    </div>
+                  </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="extension">Extension:</label>
+                    <input type="text" class="form-control" id="extension" [formControl]="document.get('extension')" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="taille">Taille:</label>
+                    <input type="number" class="form-control" id="taille" [formControl]="document.get('taille')" required>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-danger" (click)="removeDocument(i)">Supprimer le document</button>
+              </div>
+            </div>
+          </div>
+      
+          <button type="button" class="btn btn-primary mt-3" (click)="addDocument()">Ajouter un document</button>
+      
+          <button type="submit" class="btn btn-success mt-3">Créer le dossier</button>
+        </form>
+      </div>
+      
+       
+</div>

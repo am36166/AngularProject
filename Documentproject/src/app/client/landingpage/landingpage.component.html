@@ -1,0 +1,68 @@
+<header class="bg-primary">
+  <div class="container py-3">
+      <a class="navbar-brand text-white" href="#">Admin Dashboard</a>
+      <button class="btn fs-3 text-white shadow-0 p-0 float-end" data-bs-toggle="collapse" href="#collapseNavbar">
+      <i class="bi bi-list align-self-center d-flex"></i>
+      </button>
+  </div>
+
+  <div class="w-100 float-start">
+      <div class="collapse" id="collapseNavbar">
+          <nav class="navbar navbar-expand-sm navbar-light bg-light">
+              <div class="container">
+                  <ul class="navbar-nav mx-sm-auto">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">
+                          Dropdown
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" (click)="se_deconnecter()">logout</a></li>
+                        
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+  </div>
+</header>
+  <!-- landing-page.component.html -->
+
+<div class="container mt-5">
+    <h2>Liste des utilisateurs</h2>
+    <div class="feedback-message alert alert-info mt-2" *ngIf="feedbackMessage">{{ feedbackMessage }}</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Supprimer</th>
+          <th>Activer</th>
+          <th>Desactiver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.nom }}</td>
+          <td>{{ user.prenom }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="supprimerUtilisateur(user)">
+              <i class="bi bi-trash"></i></button>
+          </td>
+          <td>
+            <button class="btn btn-success" (click)="activerUtilisateur(user)" [disabled]="user.statut">
+                <i class="bi bi-check-circle"></i> 
+              </button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="desactiverUtilisateur(user)" [disabled]="!user.statut">
+                <i class="bi bi-x-circle"></i> 
+              </button>
+          </td>   
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
